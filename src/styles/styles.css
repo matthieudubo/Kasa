@@ -226,4 +226,50 @@ li {
     height: 255px;
   }
 }
+
+.footer {
+  background-color: black;
+}
+
+.footer__content {
+  max-width: 1240px;
+  margin: 0 auto;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 66px;
+  padding-bottom: 30px;
+}
+
+.footer__content svg {
+  margin-bottom: 30px;
+  width: 122px;
+}
+
+.footer__content svg path {
+  fill: white;
+}
+
+.footer__content span {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 640px) {
+  .footer__content span {
+    font-size: 0.75rem;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

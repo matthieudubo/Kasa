@@ -1,0 +1,40 @@
+.footer {
+  background-color: black;
+
+  &__content {
+    max-width: $xl;
+    margin: 0 auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 66px;
+    padding-bottom: 30px;
+
+    svg {
+      margin-bottom: 30px;
+      width: 122px;
+    }
+
+    svg path {
+      fill: white;
+    }
+
+    span {
+      font-family: $montserrat;
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .footer {
+    &__content {
+      span {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
