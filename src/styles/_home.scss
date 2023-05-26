@@ -1,0 +1,10 @@
+.home {
+  max-width: $xl;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: $xl) {
+  .home {
+    margin: 0 20px;
+  }
+}

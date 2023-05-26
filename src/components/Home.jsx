@@ -1,8 +1,15 @@
+import bgImg from "../assets/img_1.webp";
+import Banner from "./Banner";
+
 const Home = () => {
   return (
-    <>
-      <h1>Comment ça va ?</h1>
-    </>
+    <div className="home">
+      <Banner
+        title="Chez vous, partout et ailleurs"
+        bgImg={bgImg}
+        altImg="photo de montagne en bord de mer"
+      />
+    </div>
   );
 };
 

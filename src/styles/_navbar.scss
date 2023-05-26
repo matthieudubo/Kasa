@@ -1,11 +1,13 @@
 .navbar {
-  max-width: $lg;
+  max-width: $xl;
   margin: 40px auto 60px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: $primary;
   font-size: 1.5rem;
+  font-family: $montserrat;
+  font-weight: 500;
 
   &__logo {
     width: 210px;
@@ -33,7 +35,7 @@
   }
 }
 
-@media screen and (max-width: $lg) {
+@media screen and (max-width: $xl) {
   .navbar {
     margin: 20px;
   }
