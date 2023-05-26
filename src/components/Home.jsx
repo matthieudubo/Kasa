@@ -1,4 +1,5 @@
 import bgImg from "../assets/img_1.webp";
+import Apartments from "./Apartments";
 import Banner from "./Banner";
 
 const Home = () => {
@@ -9,6 +10,9 @@ const Home = () => {
         bgImg={bgImg}
         altImg="photo de montagne en bord de mer"
       />
+      <main>
+        <Apartments />
+      </main>
     </div>
   );
 };

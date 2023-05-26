@@ -1,0 +1,31 @@
+.apartments {
+  background-color: $secondary;
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 56px 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 60px;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: $lg) {
+  .apartments {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: $md) {
+  .apartments {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0;
+    background-color: transparent;
+    gap: 20px 0;
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .apartments {
+    margin-bottom: 20px;
+  }
+}

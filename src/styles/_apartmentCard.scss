@@ -1,0 +1,43 @@
+.card {
+  height: 340px;
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+
+  &__img {
+    position: absolute;
+    inset: 0px;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  &__gradient {
+    position: absolute;
+    inset: 0px;
+    z-index: 1;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 1) 100%);
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-family: $montserrat;
+    font-weight: 500;
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (max-width: $md) {
+  .card {
+    height: 255px;
+  }
+}

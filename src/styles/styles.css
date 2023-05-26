@@ -137,9 +137,93 @@ li {
 @media screen and (max-width: 640px) {
   .banner {
     height: 111px;
+    margin-bottom: 20px;
   }
   .banner h1 {
     font-size: 1.5rem;
+  }
+}
+
+.apartments {
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 56px 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 50px 60px;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+  .apartments {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .apartments {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    padding: 0;
+    background-color: transparent;
+    gap: 20px 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .apartments {
+    margin-bottom: 20px;
+  }
+}
+
+.card {
+  height: 340px;
+  border-radius: 25px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+  padding: 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+  background: linear-gradient(180deg, white 0%, black 100%);
+}
+
+.card__img {
+  position: absolute;
+  inset: 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 0;
+}
+
+.card__gradient {
+  position: absolute;
+  inset: 0px;
+  z-index: 1;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
+  background: linear-gradient(180deg, transparent 0%, black 100%);
+}
+
+.card__title {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    height: 255px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
