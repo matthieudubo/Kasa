@@ -1,0 +1,178 @@
+.apartmentDetails {
+  max-width: $xl;
+  margin: 0 auto;
+  font-family: $montserrat;
+
+  &__img {
+    height: 415px;
+    width: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    &__left {
+      &--titles {
+        color: $primary;
+        margin-bottom: 20px;
+
+        h1 {
+          font-size: 36px;
+          font-weight: 500;
+        }
+
+        h2 {
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+
+      &--tags {
+        display: flex;
+        gap: 10px;
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &__author {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        font-size: 18px;
+        color: $primary;
+        font-weight: 500;
+
+        &--name {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+        }
+
+        &--img {
+          border-radius: 50%;
+          overflow: hidden;
+          height: 64px;
+          width: 64px;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      &__rating {
+        color: $gray;
+        display: flex;
+        gap: 10px;
+
+        svg {
+          height: 24px;
+          width: 24px;
+        }
+
+        &--on {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &__accordions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 75px;
+    margin-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: $xl) {
+  .apartmentDetails {
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width: $lg) {
+  .apartmentDetails {
+    &__content {
+      flex-direction: column;
+
+      &__left {
+        &--titles {
+          h1 {
+            font-size: 18px;
+          }
+
+          h2 {
+            font-size: 14px;
+            margin-top: 10px;
+          }
+        }
+      }
+
+      &__right {
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+    }
+    &__accordions {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: $xs) {
+  .apartmentDetails {
+    &__img  {
+      height: 255px;
+    }
+
+    &__content {
+      &__right {
+        margin-top: 16px;
+
+        &__author {
+          font-size: 12px;
+
+          &--img {
+            height: 32px;
+            width: 32px;
+          }
+        }
+
+        &__rating {
+          gap: 4px;
+
+          svg {
+            height: 13px;
+            width: 13px;
+          }
+        }
+      }
+    }
+
+    &__accordions {
+      gap: 20px;
+    }
+  }
+}

@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 const ApartmentCard = ({ infos }) => {
   return (
-    <div className="card">
+    <Link to="/flat" state={{ apartmentId: infos.id }} className="card">
       <img src={infos.cover} alt={infos.title} className="card__img" />
       <div className="card__gradient" />
       <h2 className="card__title">{infos.title}</h2>
-    </div>
+    </Link>
   );
 };
 
