@@ -143,10 +143,6 @@
 
 @media screen and (max-width: $xs) {
   .apartmentDetails {
-    &__img  {
-      height: 255px;
-    }
-
     &__content {
       &__right {
         margin-top: 16px;

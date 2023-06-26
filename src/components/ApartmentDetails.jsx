@@ -3,6 +3,7 @@ import { useLocation, useParams } from "react-router";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Tag from "./Tag";
 import Accordion from "./Accordion";
+import FlatCarousel from "./FlatCarousel";
 
 const ApartmentDetails = () => {
   const [apartment, setApartment] = useState(null);
@@ -25,9 +26,7 @@ const ApartmentDetails = () => {
   if (apartment == null) return <div>Loading...</div>;
   return (
     <div className="apartmentDetails">
-      <div className="apartmentDetails__img">
-        <img src={apartment.cover} alt={apartment.title} />
-      </div>
+      <FlatCarousel imgs={apartment.pictures} alt={apartment.title} />
       <div className="apartmentDetails__content">
         <div className="apartmentDetails__content__left">
           <div className="apartmentDetails__content__left--titles">

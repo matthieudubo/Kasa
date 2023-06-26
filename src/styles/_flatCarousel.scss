@@ -1,0 +1,54 @@
+.flatCarousel {
+  position: relative;
+  margin-bottom: 30px;
+
+  &__img {
+    height: 415px;
+    width: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+
+    @media screen and (max-width: $sm) {
+      height: 255px;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__chevron {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &--left {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    &--right {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    svg {
+      height: 120px;
+      width: 96px;
+      color: white;
+
+      @media screen and (max-width: $sm) {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+}
