@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router";
+import { useLocation } from "react-router";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Tag from "./Tag";
 import Accordion from "./Accordion";
