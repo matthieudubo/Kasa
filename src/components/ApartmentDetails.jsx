@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router";
+import { useParams } from "react-router-dom";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Tag from "./Tag";
 import Accordion from "./Accordion";
@@ -7,21 +7,17 @@ import FlatCarousel from "./FlatCarousel";
 
 const ApartmentDetails = () => {
   const [apartment, setApartment] = useState(null);
-
-  const location = useLocation();
-  const apartmentId = location.state.apartmentId;
   const stars = [1, 2, 3, 4, 5];
+  const idFlat = useParams().id;
 
   useEffect(() => {
     fetch("db.json")
       .then((res) => res.json())
       .then((data) =>
-        setApartment(
-          ...data.filter((apartment) => apartment.id === apartmentId)
-        )
+        setApartment(...data.filter((apartment) => apartment.id === idFlat))
       )
       .catch((error) => console.error(error));
-  }, [apartmentId]);
+  }, [idFlat]);
 
   if (apartment == null) return <div>Loading...</div>;
   return (

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
 
 const Navbar = () => {
@@ -9,10 +10,10 @@ const Navbar = () => {
       <div className="navbar__menu">
         <ul>
           <li>
-            <a href="/">Accueil</a>
+            <Link to="/">Accueil</Link>
           </li>
           <li>
-            <a href="about">&Agrave; Propos</a>
+            <Link to="about">&Agrave; Propos</Link>
           </li>
         </ul>
       </div>

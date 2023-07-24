@@ -1,5 +1,5 @@
 import "./styles/styles.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Router, Route, Routes } from "react-router-dom";
 
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
@@ -11,15 +11,15 @@ import NotFound from "./components/NotFound";
 function App() {
   return (
     <>
-      <Navbar />
-      <BrowserRouter>
+      <HashRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/flat" element={<ApartmentDetails />} />
+          <Route path="/flat/:id" element={<ApartmentDetails />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       <Footer />
     </>
   );
