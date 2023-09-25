@@ -5,7 +5,9 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="navbar__logo">
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
       </div>
       <div className="navbar__menu">
         <ul>

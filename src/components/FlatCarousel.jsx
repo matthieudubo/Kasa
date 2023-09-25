@@ -11,50 +11,54 @@ const FlatCarousel = ({ imgs, alt }) => {
       showThumbs={false}
       showIndicators={false}
       renderArrowPrev={(clickHandler) => {
-        return (
-          <button
-            onClick={clickHandler}
-            onKeyDown={clickHandler}
-            className="flatCarousel__chevron flatCarousel__chevron--left"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
+        if (imgs.length > 1) {
+          return (
+            <button
+              onClick={clickHandler}
+              onKeyDown={clickHandler}
+              className="flatCarousel__chevron flatCarousel__chevron--left"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 19.5L8.25 12l7.5-7.5"
-              />
-            </svg>
-          </button>
-        );
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+          );
+        }
       }}
       renderArrowNext={(clickHandler) => {
-        return (
-          <button
-            onClick={clickHandler}
-            onKeyDown={clickHandler}
-            className="flatCarousel__chevron flatCarousel__chevron--right"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
+        if (imgs.length > 1) {
+          return (
+            <button
+              onClick={clickHandler}
+              onKeyDown={clickHandler}
+              className="flatCarousel__chevron flatCarousel__chevron--right"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.25 4.5l7.5 7.5-7.5 7.5"
-              />
-            </svg>
-          </button>
-        );
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          );
+        }
       }}
     >
       {imgs.map((img, id) => (
