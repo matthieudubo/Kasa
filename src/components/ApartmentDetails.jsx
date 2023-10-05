@@ -4,6 +4,7 @@ import { StarIcon } from "@heroicons/react/24/solid";
 import Tag from "./Tag";
 import Accordion from "./Accordion";
 import FlatCarousel from "./FlatCarousel";
+import NotFound from "./NotFound";
 
 const ApartmentDetails = () => {
   const [apartment, setApartment] = useState(null);
@@ -19,7 +20,7 @@ const ApartmentDetails = () => {
       .catch((error) => console.error(error));
   }, [idFlat]);
 
-  if (apartment == null) return <div>Loading...</div>;
+  if (apartment == null) return <NotFound />;
   return (
     <div className="apartmentDetails">
       <FlatCarousel imgs={apartment.pictures} alt={apartment.title} />
