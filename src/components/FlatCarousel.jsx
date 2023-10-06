@@ -1,72 +1,51 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+import { useState } from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 const FlatCarousel = ({ imgs, alt }) => {
+  const [currentImg, setCurrentImg] = useState(0);
+
+  const prevImg = () => {
+    currentImg > 0
+      ? setCurrentImg(currentImg - 1)
+      : setCurrentImg(imgs.length - 1);
+  };
+
+  const nextImg = () => {
+    currentImg < imgs.length - 1
+      ? setCurrentImg(currentImg + 1)
+      : setCurrentImg(0);
+  };
+
   return (
-    <Carousel
-      className="flatCarousel"
-      infiniteLoop
-      showArrows={false}
-      showStatus={false}
-      showThumbs={false}
-      showIndicators={false}
-      renderArrowPrev={(clickHandler) => {
-        if (imgs.length > 1) {
-          return (
-            <button
-              onClick={clickHandler}
-              onKeyDown={clickHandler}
-              className="flatCarousel__chevron flatCarousel__chevron--left"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
-            </button>
-          );
-        }
-      }}
-      renderArrowNext={(clickHandler) => {
-        if (imgs.length > 1) {
-          return (
-            <button
-              onClick={clickHandler}
-              onKeyDown={clickHandler}
-              className="flatCarousel__chevron flatCarousel__chevron--right"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </button>
-          );
-        }
-      }}
-    >
-      {imgs.map((img, id) => (
-        <div className="flatCarousel__img" key={id}>
-          <img src={img} alt={alt} />
-        </div>
+    <div className="flatCarousel">
+      {imgs.length > 1 && (
+        <button
+          onClick={prevImg}
+          className="flatCarousel__chevron flatCarousel__chevron--left"
+        >
+          <ChevronLeftIcon />
+        </button>
+      )}
+      {imgs.length > 1 && (
+        <button
+          onClick={nextImg}
+          className="flatCarousel__chevron flatCarousel__chevron--right"
+        >
+          <ChevronRightIcon />
+        </button>
+      )}
+      <span className="flatCarousel__counter">
+        {currentImg + 1}/{imgs.length}
+      </span>
+      {imgs.map((img, i) => (
+        <img
+          src={img}
+          alt={alt}
+          key={img}
+          className={i === currentImg ? "active" : ""}
+        />
       ))}
-    </Carousel>
+    </div>
   );
 };
 

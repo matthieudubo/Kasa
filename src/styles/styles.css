@@ -679,27 +679,32 @@ li {
 
 .flatCarousel {
   position: relative;
-  margin-bottom: 30px;
-}
-
-.flatCarousel__img {
   height: 415px;
   width: 100%;
   border-radius: 25px;
   overflow: hidden;
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width: 640px) {
-  .flatCarousel__img {
+  .flatCarousel {
     height: 255px;
   }
 }
 
-.flatCarousel__img img {
+.flatCarousel img {
+  position: absolute;
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+}
+
+.flatCarousel .active {
+  opacity: 1;
 }
 
 .flatCarousel__chevron {
@@ -737,5 +742,18 @@ li {
     height: 24px;
     width: 24px;
   }
+}
+
+.flatCarousel__counter {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fff;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  bottom: 30px;
+  z-index: 10;
 }
 /*# sourceMappingURL=styles.css.map */
